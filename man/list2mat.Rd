@@ -4,7 +4,7 @@
 \alias{list2mat}
 \title{Convert List of matrices to a matrix.}
 \usage{
-list2mat(mats = mat.list, fill = NA)
+list2mat(mats = mats, fill = NA)
 }
 \arguments{
 \item{mats}{the matrices stored in a \code{list} format. \code{array} is also

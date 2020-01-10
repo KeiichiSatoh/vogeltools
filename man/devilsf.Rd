@@ -6,7 +6,7 @@
 \usage{
 devilsf(
   mat = mat,
-  pol = policy.score,
+  pol = pol,
   score.std = c("none", "zero.one", "z.std", "non.param"),
   exp.method = c("both", "column", "row", "none"),
   eval.method = c("realized", "all"),

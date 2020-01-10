@@ -1,4 +1,4 @@
-#' Convert attribute vector to a matrix.
+#' Convert attribute vector to a matrix
 #'
 #' \code{attr2mat} converts a vector indicating attribute to a matrix.
 #'
@@ -30,8 +30,7 @@
 #' \code{"min"}(minimum value): \eqn{Matrix[i,j] = min(attr[i], attr[j])}.
 #'
 #' \code{"mean"}(mean value): \eqn{Matrix[i,j] = mean(attr[i], attr[j])}.
-
-
+#'
 #' @param attr vector of input attribute.
 #' @param method \code{"match"}, \code{"match.one"}, \code{"diff"},
 #'   \code{"abs.diff"}, \code{"sqd.diff"}, \code{"sum"}, \code{"product"},
@@ -40,6 +39,7 @@
 #' @param diag.val the diag value to be filled. If \code{NULL} is set, no value
 #'   is inputed.
 #' @return a matrix converted from a vector.
+#'
 #' @examples
 #' attr <- c(1,1,2,2,3,3)
 #' names(attr) <- letters[1:6]

@@ -1,6 +1,6 @@
 Package: vogeltools
 Type: Package
-Title: toolkits for the social network analysis (for the personal use).
+Title: toolkits for the social network analysis (for the personal use)
 Version: 0.1.1
 Author: Keiichi Satoh
 Maintainer: Keiichi Satoh <k.s.vogel1234@gmail.com>

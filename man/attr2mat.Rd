@@ -2,7 +2,7 @@
 % Please edit documentation in R/attr2mat.R
 \name{attr2mat}
 \alias{attr2mat}
-\title{Convert attribute vector to a matrix.}
+\title{Convert attribute vector to a matrix}
 \usage{
 attr2mat(attr, method = "match", diag.val = 0)
 }
