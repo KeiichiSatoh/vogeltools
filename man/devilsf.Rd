@@ -31,6 +31,10 @@ overestimation.}
 
 \item{alpha}{cut-off value when binalize the devil shift and angel shift
 matrix. alpha is NULL by default.}
+
+\item{score.norm}{logical; should the engel- and devil shift score normalized
+by the total number of influence checked in the matrix. score.norm is FALSE
+by default.}
 }
 \description{
 \code{devilsf} returns the devil shift and angel shift matrix.
