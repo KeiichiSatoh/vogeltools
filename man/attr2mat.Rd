@@ -59,4 +59,5 @@ names(vec) <- letters[1:6]
 attr2mat(vec)
 attr2mat(vec, "match.one")
 attr2mat(vec, "match.one", diag.val = NULL)
+
 }

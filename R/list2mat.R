@@ -32,7 +32,8 @@
 #' mats <- list(mat1, mat2, mat3)
 #'
 #' list2mat(mats, fill = NA)
-
+#'
+#' @export
 list2mat <- function(mats = mats, fill = NA){
   # convert array to matrix, if the original data is that format
   if(is.array(mats)==T){

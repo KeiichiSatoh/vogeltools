@@ -44,4 +44,5 @@ dimnames(mat3) <- list(paste(rep("C", 2), 1:2, sep = ""),
 mats <- list(mat1, mat2, mat3)
 
 list2mat(mats, fill = NA)
+
 }

@@ -55,9 +55,9 @@
 devilsf <- function(
   mat = mat,
   pol = pol,
-  score.std = c("none","zero.one","z.std","non.param"),
-  exp.method = c("both", "column", "row", "none"),
-  eval.method = c("realized","all"),
+  score.std = "none",
+  exp.method = "both",
+  eval.method = "realized",
   alpha = NULL,
   score.norm = FALSE){
 

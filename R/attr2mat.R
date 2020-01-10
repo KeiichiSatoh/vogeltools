@@ -46,7 +46,8 @@
 #' attr2mat(vec)
 #' attr2mat(vec, "match.one")
 #' attr2mat(vec, "match.one", diag.val = NULL)
-
+#'
+#' @export
 attr2mat <- function(attr,
                      method = "match",
                      diag.val = 0){
