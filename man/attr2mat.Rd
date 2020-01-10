@@ -53,10 +53,3 @@ This function convertes a vector of matrices \eqn{attr} to a new matrix
 
 \code{"mean"}(mean value): \eqn{Matrix[i,j] = mean(attr[i], attr[j])}.
 }
-\examples{
-attr <- c(1,1,2,2,3,3)
-names(attr) <- letters[1:6]
-attr2mat(attr)
-attr2mat(attr, "match.one")
-attr2mat(attr, "match.one", diag.val = NULL)
-}
