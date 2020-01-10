@@ -50,8 +50,8 @@
 #' res$pol.agg
 #' res$devil.mat
 #' res$angel.mat
-
-
+#'
+#' @export
 devilsf <- function(
   mat = mat,
   pol = pol,
