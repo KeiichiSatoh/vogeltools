@@ -40,12 +40,7 @@
 #'   is inputed.
 #' @return a matrix converted from a vector.
 #'
-#' @examples
-#' vec <- c(1,1,2,2,3,3)
-#' names(vec) <- letters[1:6]
-#' attr2mat(vec)
-#' attr2mat(vec, "match.one")
-#' attr2mat(vec, "match.one", diag.val = NULL)
+
 
 attr2mat <- function(attr,
                      method = "match",
