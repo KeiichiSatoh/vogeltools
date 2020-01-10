@@ -53,7 +53,7 @@ mat <- matrix(c(0,0,0,1,1,1,
                 1,0,0,1,0,0,
                 1,1,1,0,0,0,
                 0,0,0,1,1,1,
-                1,0,0,1,0,0),6,6,byrow = T)
+                1,0,0,1,0,0),6,6,byrow = TRUE)
 namelabel <- c(paste(rep("A",3), 1:3, sep = ""),
                paste(rep("B",3), 1:3, sep = ""))
 dimnames(mat) <- list(namelabel, namelabel)
