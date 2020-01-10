@@ -11,7 +11,7 @@ devilsf(
   exp.method = c("both", "column", "row", "none"),
   eval.method = c("realized", "all"),
   alpha = NULL,
-  score.norm = F
+  score.norm = FALSE
 )
 }
 \arguments{
