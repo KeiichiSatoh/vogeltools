@@ -4,8 +4,7 @@ Title: toolkits for the social network analysis (for the personal use).
 Version: 0.1.1
 Author: Keiichi Satoh
 Maintainer: Keiichi Satoh <k.s.vogel1234@gmail.com>
-Description: Some utility functions for the social network analyis, 
-especially when using the package sna.
+Description: Some utility functions for the social network analyis, especially when using the package sna.
 License: CC0
 Encoding: UTF-8
 LazyData: true
