@@ -41,11 +41,11 @@
 #' @return a matrix converted from a vector.
 #'
 #' @examples
-#' attr <- c(1,1,2,2,3,3)
-#' names(attr) <- letters[1:6]
-#' attr2mat(attr)
-#' attr2mat(attr, "match.one")
-#' attr2mat(attr, "match.one", diag.val = NULL)
+#' vec <- c(1,1,2,2,3,3)
+#' names(vec) <- letters[1:6]
+#' attr2mat(vec)
+#' attr2mat(vec, "match.one")
+#' attr2mat(vec, "match.one", diag.val = NULL)
 
 attr2mat <- function(attr,
                      method = "match",
