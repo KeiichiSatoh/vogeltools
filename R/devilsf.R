@@ -41,7 +41,7 @@
 #'               exp.method ="both",
 #'               eval.method = "realized",
 #'               alpha = NULL,
-#'               score.norm = F)
+#'               score.norm = FALSE)
 #'
 #' res$original.mat
 #' res$exp.mat
