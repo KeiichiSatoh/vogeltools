@@ -37,7 +37,7 @@ by the total number of influence checked in the matrix. score.norm is FALSE
 by default.}
 }
 \description{
-\code{devilsf} returns the devil shift and angel shift matrix.
+\code{devilsf} returns the devil shift and angel shift matrix
 }
 \details{
 Two devil shift and angel shift matrix is created from the two scale:(1) the

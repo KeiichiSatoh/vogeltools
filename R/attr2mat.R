@@ -1,6 +1,6 @@
 #' Convert attribute vector to a matrix
 #'
-#' \code{attr2mat} converts a vector indicating attribute to a matrix.
+#' \code{attr2mat} converts a vector indicating attribute to a matrix
 #'
 #' This function convertes a vector of matrices \eqn{attr} to a new matrix
 #' \eqn{mat[i,j]} based on the definition set by \code{method}:

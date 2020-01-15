@@ -39,7 +39,7 @@ a list of matrices in which each matrix shows the result of each
 \description{
 \code{brokerage.j} and \code{brokerage.k} counts the number of times the
 alter stands at the position in j and k, respectively, in the different
-brokerage typology.
+brokerage typology
 }
 \details{
 This function first differentiate the ties into homophilous and

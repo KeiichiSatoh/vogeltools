@@ -1,6 +1,6 @@
 #' Create a devil shift and angel shift matrix.
 #'
-#' \code{devilsf} returns the devil shift and angel shift matrix.
+#' \code{devilsf} returns the devil shift and angel shift matrix
 #'
 #' Two devil shift and angel shift matrix is created from the two scale:(1) the
 #' degree that the ego perceives the others more powerful than they actually are

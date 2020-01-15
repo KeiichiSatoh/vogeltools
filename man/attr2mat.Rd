@@ -21,7 +21,7 @@ is inputed.}
 a matrix converted from a vector.
 }
 \description{
-\code{attr2mat} converts a vector indicating attribute to a matrix.
+\code{attr2mat} converts a vector indicating attribute to a matrix
 }
 \details{
 This function convertes a vector of matrices \eqn{attr} to a new matrix

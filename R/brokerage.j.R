@@ -2,7 +2,7 @@
 #'
 #' \code{brokerage.j} and \code{brokerage.k} counts the number of times the
 #' alter stands at the position in j and k, respectively, in the different
-#' brokerage typology.
+#' brokerage typology
 #'
 #' This function first differentiate the ties into homophilous and
 #' heterophilious ties. It counts then how many times the alter stands in the j
