@@ -1,7 +1,7 @@
 Package: vogeltools
 Type: Package
 Title: Utilities for the social network analysis
-Version: 0.1.3
+Version: 0.1.4
 Author: Keiichi Satoh
 Maintainer: Keiichi Satoh <k.s.vogel1234@gmail.com>
 Description: Some utility functions for the social network analyis, especially when using the package sna.

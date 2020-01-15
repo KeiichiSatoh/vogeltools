@@ -2,4 +2,5 @@
 
 export(attr2mat)
 export(devilsf)
+export(gscale)
 export(list2mat)
