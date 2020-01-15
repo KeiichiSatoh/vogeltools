@@ -19,42 +19,67 @@ netlm.grpd(
 )
 }
 \arguments{
-\item{y}{dependent network variable. This should be a matrix, for obvious reasons; NAs are allowed, but dichotomous data is strongly discouraged due to the assumptions of the analysis.}
+\item{y}{dependent network variable. This should be a matrix, for obvious
+reasons; NAs are allowed, but dichotomous data is strongly discouraged due
+to the assumptions of the analysis.}
 
-\item{x}{stack of independent network variables. Note that NAs are permitted, as is dichotomous data.}
+\item{x}{stack of independent network variables. Note that NAs are permitted,
+as is dichotomous data.}
 
 \item{intercept}{logical; should an intercept term be added?}
 
-\item{mode}{string indicating the type of graph being evaluated. "digraph" indicates that edges should be interpreted as directed; "graph" indicates that edges are undirected. mode is set to "digraph" by default.}
+\item{mode}{string indicating the type of graph being evaluated. "digraph"
+indicates that edges should be interpreted as directed; "graph" indicates
+that edges are undirected. mode is set to "digraph" by default.}
 
-\item{diag}{logical; should the diagonal be treated as valid data? Set this true if and only if the data can contain loops. diag is FALSE by default.}
+\item{diag}{logical; should the diagonal be treated as valid data? Set this
+true if and only if the data can contain loops. \code{diag} is \code{FALSE}
+by default.}
 
-\item{grp.ns}{a vector indicates the number of actors in each group. The default is \code{NULL}. A raison d'etre of this extention function.}
+\item{grp.ns}{a vector indicates the number of actors in each group. The
+default is \code{NULL}. A raison d'etre of this extention function.}
 
-\item{nullhyp}{string indicating the particular null hypothesis against which to test the observed estimands.}
+\item{nullhyp}{string indicating the particular null hypothesis against which
+to test the observed estimands.}
 
-\item{test.statistic}{string indicating the test statistic to be used for the Monte Carlo procedures.}
+\item{test.statistic}{string indicating the test statistic to be used for the
+Monte Carlo procedures.}
 
 \item{tol}{tolerance parameter for \code{\link[base]{qr.solve}}.}
 
-\item{reps}{integer indicating the number of draws to use for quantile estimation. (Relevant to the null hypothesis test only - the analysis itself is unaffected by this parameter.) Note that, as for all Monte Carlo procedures, convergence is slower for more extreme quantiles. By default, reps=1000.}
+\item{reps}{integer indicating the number of draws to use for quantile
+estimation. (Relevant to the null hypothesis test only - the analysis
+itself is unaffected by this parameter.) Note that, as for all Monte Carlo
+procedures, convergence is slower for more extreme quantiles. By default,
+reps=1000.}
 }
 \value{
 An object of class \code{\link[sna]{netlm}}.
 }
 \description{
-\code{netlm} regresses the network variable in y on the network variables in stack x using ordinary least squares. The resulting fits (and coefficients) are then tested against the indicated null hypothesis.This is a extention of \code{\link[sna]{netlm}}, as it supports the grouped network permutation. This function is still in the testing phase.
+\code{netlm} regresses the network variable in y on the network variables in
+stack x using ordinary least squares. The resulting fits (and coefficients)
+are then tested against the indicated null hypothesis.This is a extention of
+\code{\link[sna]{netlm}}, as it supports the grouped network permutation.
+This function is still in the testing phase.
 }
 \details{
-This is the extention of the \code{\link[sna]{netlm}} which supports the grouped network permutation when calculating the significance level from the matrix permutation, currently only support the method \code{qap} and \code{qapspp} (they are identical) for such permutation though.
-This function helps for QAP test in which the off-diagonal matrix is
-set to be \code{NA}, for example.
+This is the extention of the \code{\link[sna]{netlm}} in the package
+\code{sna}. This function supports the grouped network permutation when
+calculating the significance level, although currently it support only the
+method \code{qap} and \code{qapspp} (they are identical) for such
+permutation. This function helps for QAP test in which the off-diagonal
+matrix is set to be \code{NA}, for example.
 
-The tests in the \code{nullhyp} supported by \code{netlm.grpd} are (currently) as follows:
+The tests in the \code{nullhyp} supported by \code{netlm.grpd} are
+(currently) as follows:
 
 \code{classical}: tests based on classical asymptotics.
+
 \code{qap}: QAP permutation test; currently identical to \code{qapspp}.
-\code{qapspp}: QAP permutation test, using Dekker's "semi-partialling plus" procedure.
+
+\code{qapspp}: QAP permutation test, using Dekker's "semi-partialling plus"
+procedure.
 }
 \examples{
 # Example
