@@ -194,3 +194,129 @@ brokerage.j <- function(
   }
 }
 
+#' @rdname brokerage.j
+brokerage.k <- function(
+  mat = mat, attr=attr,
+  method="abs.diff", alpha = 0.5,
+  denom = "none"){
+  if(method == "abs.diff"){
+    diff.mat <- matrix(NA, nrow(mat), ncol(mat), byrow = T)
+    dimnames(diff.mat) <- dimnames(mat)
+    for(i in 1:nrow(mat)){
+      for(j in 1:nrow(mat)){
+        diff.mat[i,j] <- abs(attr[i]-attr[j])
+      }
+    }
+    # differentiate the matrix
+    Homo <- mat
+    Homo[diff.mat > alpha] <- 0
+    Hetr <- mat
+    Hetr[diff.mat <= alpha] <- 0
+  }else if(method=="match"){
+    match.mat <- matrix(NA, nrow(mat), ncol(mat), byrow = T)
+    dimnames(match.mat) <- dimnames(mat)
+    for(i in 1:nrow(mat)){
+      for(j in 1:nrow(mat)){
+        match.mat[i,j] <- attr[i]==attr[j]
+      }
+    }
+    # differentiate the matrix
+    Homo <- mat
+    Homo[match.mat==F] <- 0
+    Hetr <- mat
+    Hetr[match.mat==T] <- 0
+  }
+
+  # Calculate the brokerage
+  # wi
+  wi.calc <- array(NA, c(nrow(mat), nrow(mat), nrow(mat)))
+  wi <- matrix(NA, nrow(mat), nrow(mat), byrow = T)
+  dimnames(wi) <- dimnames(mat)
+  for(i in 1:nrow(mat)){
+    for(j in 1:nrow(mat)){
+      for(k in 1:nrow(mat)){
+        if(i==j | j==k | k==i){
+          wi.calc[i,j,k] <- NA
+        }else{
+          wi.calc[i,j,k] <- (Homo[i,j]==1 & Homo[j,k]==1 & Homo[i,k]==0)
+        }
+        wi[i,k] <- sum(wi.calc[i,,k], na.rm = T)
+      }
+    }
+  }
+
+  # wo
+  wo.calc <- array(NA, c(nrow(mat), nrow(mat), nrow(mat)))
+  wo <- matrix(NA, nrow(mat), nrow(mat), byrow = T)
+  dimnames(wo) <- dimnames(mat)
+  for(i in 1:nrow(mat)){
+    for(j in 1:nrow(mat)){
+      for(k in 1:nrow(mat)){
+        if(i==j | j==k | k==i){
+          wo.calc[i,j,k] <- NA
+        }else{
+          wo.calc[i,j,k] <- (Hetr[i,j]==1 & Hetr[j,k]==1 & Homo[i,k]==0)
+        }
+        wo[i,k] <- sum(wo.calc[i,,k], na.rm = T)
+      }
+    }
+  }
+
+  # boi
+  boi.calc <- array(NA, c(nrow(mat), nrow(mat), nrow(mat)))
+  boi <- matrix(NA, nrow(mat), nrow(mat), byrow = T)
+  dimnames(boi) <- dimnames(mat)
+  for(i in 1:nrow(mat)){
+    for(j in 1:nrow(mat)){
+      for(k in 1:nrow(mat)){
+        if(i==j | j==k | k==i){
+          boi.calc[i,j,k] <- NA
+        }else{
+          boi.calc[i,j,k] <- (Hetr[i,j]==1 & Homo[j,k]==1 & Hetr[i,k]==0)
+        }
+        boi[i,k] <- sum(boi.calc[i,,k], na.rm = T)
+      }
+    }
+  }
+
+  # bio
+  bio.calc <- array(NA, c(nrow(mat), nrow(mat), nrow(mat)))
+  bio <- matrix(NA, nrow(mat), nrow(mat), byrow = T)
+  dimnames(bio) <- dimnames(mat)
+  for(i in 1:nrow(mat)){
+    for(j in 1:nrow(mat)){
+      for(k in 1:nrow(mat)){
+        if(i==j | j==k | k==i){
+          bio.calc[i,j,k] <- NA
+        }else{
+          bio.calc[i,j,k] <- (Homo[i,j]==1 & Hetr[j,k]==1 & Hetr[i,k]==0)
+        }
+        bio[i,k] <- sum(bio.calc[i,,k], na.rm = T)
+      }
+    }
+  }
+
+  # return the result
+  if(denom == "none"){
+    res <- list(wi = wi,
+                wo = wo,
+                boi = boi,
+                bio = bio)
+    return(res)
+  }else if(denom == "n"){
+    n <- nrow(mat)
+    res <- list(wi = wi/n,
+                wo = wo/n,
+                boi = boi/n,
+                bio = bio/n)
+    return(res)
+  }else if(denom == "density"){
+    D <- sna::gden(mat)
+    res <- list(wi = wi*D,
+                wo = wo*D,
+                boi = boi*D,
+                bio = bio*D)
+    return(res)
+  }
+}
+
