@@ -196,6 +196,7 @@ brokerage.j <- function(
 
 
 #' @rdname brokerage.j
+#' @export
 brokerage.k <- function(
   mat = mat, attr=attr,
   method="abs.diff", alpha = 0.5,
