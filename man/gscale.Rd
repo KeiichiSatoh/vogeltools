@@ -20,7 +20,7 @@ is \code{FALSE}(not considered). With this defalut setting, the diagonal
 values are set to be \code{NA}.}
 }
 \value{
-a scaled matrix defined by the method.
+a scaled matrix defined by the scaling method.
 }
 \description{
 \code{gscale} standardize the values in a matrix. This is a matrix version of
@@ -49,4 +49,7 @@ gscale(mat, diag = TRUE)
 gscale(mat, center = TRUE, scale = FALSE, diag = TRUE)
 gscale(mat, center = FALSE, scale = TRUE, diag = TRUE)
 
+}
+\seealso{
+\code{\link[base]{scale}}
 }

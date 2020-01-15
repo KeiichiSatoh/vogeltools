@@ -23,6 +23,7 @@
 #'   is \code{FALSE}(not considered). With this defalut setting, the diagonal
 #'   values are set to be \code{NA}.
 #' @return a scaled matrix defined by the scaling method.
+#' @seealso \code{\link[base]{scale}}
 #'
 #' @examples
 #' mat <- matrix(c(1,2,3,
