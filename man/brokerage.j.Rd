@@ -2,18 +2,9 @@
 % Please edit documentation in R/brokerage.j.R
 \name{brokerage.j}
 \alias{brokerage.j}
-\alias{brokerage.k}
 \title{Positional analysis of j and k in the Brokerage relationship i-j-k.}
 \usage{
 brokerage.j(
-  mat = mat,
-  attr = attr,
-  method = "abs.diff",
-  alpha = 0.5,
-  denom = "none"
-)
-
-brokerage.k(
   mat = mat,
   attr = attr,
   method = "abs.diff",
