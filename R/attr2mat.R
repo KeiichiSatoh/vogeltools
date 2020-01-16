@@ -31,7 +31,7 @@
 #'
 #' \code{"mean"}(mean value): \eqn{Matrix[i,j] = mean(attr[i], attr[j])}.
 #'
-#' @param attr vector of input attribute.
+#' @param attr vector of input attribute (numeric or logical vector).
 #' @param method \code{"match"}, \code{"match.one"}, \code{"diff"},
 #'   \code{"abs.diff"}, \code{"sqd.diff"}, \code{"sum"}, \code{"product"},
 #'   \code{"identity"}, \code{"row"}, \code{"column"}, \code{"max"},
@@ -53,6 +53,20 @@ attr2mat <- function(attr,
                      diag.val = 0){
   len <- length(attr)
   mat <- matrix(NA, len, len)
+
+  # check the format of attribute
+  if(class(attr)=="character"){
+    stop("character cannot be supplied to attr.")
+  }else if(class(attr)=="factor"){
+    attr <- as.numeric(attr)
+    warning("factor supplied to attr, carefully consider the result")
+  }else if(class(attr)=="logical"){
+    attr <- as.numeric(attr)
+  }else if(class(attr)=="numeric"){
+    attr <- attr
+  }else{
+    stop("this attr format is not supported.")
+  }
 
   # names
   dimnames(mat) <- list(names(attr), names(attr))

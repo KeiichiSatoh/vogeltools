@@ -7,7 +7,7 @@
 attr2mat(attr, method = "match", diag.val = 0)
 }
 \arguments{
-\item{attr}{vector of input attribute.}
+\item{attr}{vector of input attribute (numeric or logical vector).}
 
 \item{method}{\code{"match"}, \code{"match.one"}, \code{"diff"},
 \code{"abs.diff"}, \code{"sqd.diff"}, \code{"sum"}, \code{"product"},
