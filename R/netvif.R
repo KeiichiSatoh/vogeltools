@@ -1,7 +1,7 @@
 #' Calculate vif for network regression.
 #'
-#' \code{netvif} vectorizes the object supplied for the QAP regression and
-#' passes to \code{vif} in the R package \code{car} to calculate the vif.
+#' \code{netvif} vectorizes the object for the QAP regression and
+#' passes to the function \code{vif} in the package \code{car} to calculate the vif.
 #'
 #' This is a utility function for selecting the independent variables when
 #' conducting QAP regression.
@@ -23,9 +23,11 @@
 #' # Create some input graphs
 #' x <- sna::rgraph(20,4)
 #'
-#' #Create a response structure
+#' # Create a response structure
 #' y <- x[1,,]+4*x[2,,]+2*x[3,,]   #Note that the fourth graph is unrelated
 #'
+#' # calculate the vifs when using these items
+#' netvif(y, x, fun = "netlm")
 #' @export
 
 netvif <- function(y, x, mode = "digraph", diag = FALSE, fun = "netlm"){
